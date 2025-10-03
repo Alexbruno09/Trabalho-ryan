@@ -17,7 +17,7 @@ class Registro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     materia = db.Column(db.String(100), nullable=False)
     conteudo = db.Column(db.Text, nullable=False)
-    horas = db.Column(db.Integer, nullable=False)  # quantidade de horas estudadas
-    horario = db.Column(db.String(10), nullable=False)  # formato HH:MM
+    horas = db.Column(db.Integer, nullable=False)  
+    horario = db.Column(db.String(10), nullable=False)  
 
     aluno_id = db.Column(db.Integer, db.ForeignKey("alunos.id"), nullable=False)
