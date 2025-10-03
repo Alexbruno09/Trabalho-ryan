@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Alunos cadastrados</h2>
+
+{% if alunos %}
+  <ul class="alunos">
+    {% for aluno in alunos %}
+      <li>
+        <a href="{{ url_for('ver_aluno', aluno_id=aluno.id) }}">
+          {{ aluno.nome }} (ID: {{ aluno.id }})
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Nenhum aluno cadastrado.</p>
+{% endif %}
+
+<a class="btn" href="{{ url_for('novo_aluno') }}">Novo aluno</a>
+{% endblock %}

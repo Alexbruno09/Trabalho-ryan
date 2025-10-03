@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Registros de {{ aluno.nome }} (ID: {{ aluno.id }})</h2>
+
+<form method="POST" action="{{ url_for('novo_registro', aluno_id=aluno.id) }}" class="formulario">
+  <label>Matéria:</label>
+  <input type="text" name="materia" required>
+
+  <label>Descrição do estudo:</label>
+  <textarea name="conteudo" required></textarea>
+
+  <label>Horas estudadas:</label>
+  <input type="number" name="horas" min="1" required>
+
+  <label>Horário de início:</label>
+  <input type="time" name="horario" required>
+
+  <button type="submit">Adicionar</button>
+</form>
+
+<h3>Histórico</h3>
+<ul class="registros">
+  {% for reg in aluno.registros %}
+    <li>
+      <b>{{ reg.materia }}</b> — {{ reg.conteudo }}<br>
+      Horário: {{ reg.horario }} | Duração: {{ reg.horas }}h
+      <a class="delete" href="{{ url_for('delete_registro', registro_id=reg.id) }}">Excluir</a>
+    </li>
+  {% else %}
+    <li>Nenhum registro ainda.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,7 +1,0 @@
-Diário de Estudos Pessoal
-
-Aplicação para alunos registrarem oque estudaram a cada dia, por matéria.
-
-.FRONT-END: Painel para o aluno inserir seu nome/ID, ver e adicionar registros de estudo
-.BACKEND: CRUD para os registros de estudo, vinculados ao aluno.
-.BANCO DE DADOS: Tabelas 'Alunos' e 'Registros_estudo'.

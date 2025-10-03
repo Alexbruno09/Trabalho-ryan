@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Novo aluno</h2>
+<form method="POST" class="formulario">
+  <label>Nome:</label>
+  <input type="text" name="nome" required>
+  <button type="submit">Salvar</button>
+</form>
+{% endblock %}
